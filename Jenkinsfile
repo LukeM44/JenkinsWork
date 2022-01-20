@@ -4,6 +4,10 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python --version'
+                timeout(time: 1, unit: 'MINUTES') {
+                    bat 'main.py'
+                }
+
             }
         }
     }
